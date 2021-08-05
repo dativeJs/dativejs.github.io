@@ -3,7 +3,7 @@
 # **DativeJs - A Micro JavaScript Ui Framework**
 
 ![License](assets/img/License-MIT-yellow.svg)
-![Downloads](assets/img/total.svg)
+![Download](https://img.shields.io/github/downloads/Tobithedev/DativeJs/total?style=social)
 ### Installation
 ### Download
 ```html 
