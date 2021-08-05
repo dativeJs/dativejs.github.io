@@ -92,7 +92,7 @@ new Docute({
             },
             {
               title: 'GitHub',
-              link: 'https://github.com/egoist/docute'
+              link: 'https://github.com/Tobithedev/DativeJs'
             },
           ],
           sidebar: [
