@@ -22,7 +22,7 @@
 ```
 ## EsModule
 ```js
-import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.es.min.js";
+import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@v1.0.0/dist/dative.es.min.js";
 ```
 <!--## Npm
 ```bash
