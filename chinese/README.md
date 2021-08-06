@@ -3,7 +3,7 @@
 # **DativeJs - 一个微型 JavaScript 用户界面框架**
 
 ![License](assets/img/License-MIT-yellow.svg)
-![下载](assets/img/total.svg)
+
 ### 安装
 ### 下载
 ```html
@@ -12,17 +12,17 @@
 ### CDN
 ```html
 <!--开发-->
-<script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.js"></script>
 <!--生产-->
-<script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.min.js"></script>
 ```
 ## 克隆模板
 ```bash
- git clone https://github.com/Tobithedev/Dative-template.git
+ git clone https://github.com/dativeJs/dative-template.git
 ```
 ## EsModule
 ```js
-import Dative from "https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.es.min.js"；
+import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.es.min.js"；
 ```
 <!--## NPM
 ```bash
@@ -37,7 +37,7 @@ import Dative from 'dative'；
 ```html
 <body>
 <div id="app"></div>
-<script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.min.js"></script>
 <script>
     // 代码在这里
   </script>
@@ -47,7 +47,7 @@ import Dative from 'dative'；
 ```html
 <body>
   <div id="app"></div>
-  <script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.min.js"></script>
   <script>
     var vm = new Dative({
       el: "#app"，
