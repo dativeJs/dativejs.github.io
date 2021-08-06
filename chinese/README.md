@@ -4,6 +4,8 @@
 
 ![License](assets/img/License-MIT-yellow.svg)
 
+![Download](https://img.shields.io/github/downloads/dativeJs/dativejs/total?style=social)
+
 ### 安装
 ### 下载
 ```html
