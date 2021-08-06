@@ -13,5 +13,5 @@
 ```
 ## Clone The Template
 ```bash
- git clone https://github.com/dativejs/dative-template.git
+ git clone https://github.com/dativeJs/dative-template.git
 ```

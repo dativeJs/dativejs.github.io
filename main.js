@@ -21,7 +21,7 @@ new Docute({
       },
     {
       title: 'GitHub',
-      link: 'https://github.com/Tobithedev/DativeJs'
+      link: 'https://github.com/dativeJs/dativejs'
       },
     ],
     sidebar: [
@@ -92,7 +92,7 @@ new Docute({
             },
             {
               title: 'GitHub',
-              link: 'https://github.com/Tobithedev/DativeJs'
+              link: 'https://github.com/dativeJs/dativejs'
             },
           ],
           sidebar: [

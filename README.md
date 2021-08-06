@@ -3,7 +3,7 @@
 # **DativeJs - A Micro JavaScript Ui Framework**
 
 ![License](assets/img/License-MIT-yellow.svg)
-![Downloads](assets/img/total.svg)
+
 ### Installation
 ### Download
 ```html 
@@ -12,17 +12,17 @@
 ### CDN
 ```html
 <!--Development-->
-<script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.js"></script>
 <!--Production-->
-<script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.min.js"></script>
 ```
 ## Clone The Template
 ```bash
- git clone https://github.com/Tobithedev/Dative-template.git
+ git clone https://github.com/dativeJs/dative-template.git
 ```
 ## EsModule
 ```js
-import Dative from "https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.es.min.js";
+import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.es.min.js";
 ```
 <!--## Npm
 ```bash
@@ -37,7 +37,7 @@ import Dative from 'dative';
 ```html
 <body>
   <div id="app"></div>
-  <script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.min.js"></script>
   <script>
     // Code goes here
   </script>
@@ -47,7 +47,7 @@ import Dative from 'dative';
 ```html
 <body>
   <div id="app"></div>
-  <script src="https://cdn.jsdelivr.net/gh/Tobithedev/DativeJs@main/dist/dative.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.min.js"></script>
   <script>
     var vm = new Dative({
       el: "#app",
