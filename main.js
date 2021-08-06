@@ -7,7 +7,7 @@ const SponsorIcon = {
 new Docute({
   target: '#app',
   title: 'DativeJs',
-  editLinkBase: 'https://github.com/Tobithedev/DativeWeb/tree/master/',
+  editLinkBase: 'https://github.com/dativeJs/dativejs.github.io/tree/master/',
   editLinkText: 'Edit this page on GitHub',
   router: {
     mode: 'hash'
@@ -84,7 +84,7 @@ new Docute({
         '/chinese/': {
           language: 'Chinese',
           editLinkText: '在 GitHub 上编辑此页',
-          editLinkBase: 'https://github.com/Tobithedev/DativeWeb/tree/master/',
+          editLinkBase: 'https://github.com/dativeJs/dativejs.github.io/tree/master/',
           nav: [
             {
               title: '家',
