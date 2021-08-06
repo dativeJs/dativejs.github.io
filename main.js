@@ -84,7 +84,7 @@ new Docute({
         '/chinese/': {
           language: 'Chinese',
           editLinkText: '在 GitHub 上编辑此页',
-          editLinkBase: 'https://github.com/Tobithedev/DativeWeb/tree/master/chinese',
+          editLinkBase: 'https://github.com/Tobithedev/DativeWeb/tree/master/',
           nav: [
             {
               title: '家',
