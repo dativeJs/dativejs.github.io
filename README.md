@@ -3,7 +3,9 @@
 # **DativeJs - A Micro JavaScript Ui Framework**
 
 ![License](assets/img/License-MIT-yellow.svg)
-![Download](https://img.shields.io/github/downloads/dativeJs/dativejs/total?style=social)
+![Version](https://img.shields.io/github/v/release/dativeJs/dativejs)
+![repo size](https://img.shields.io/github/repo-size/dativeJs/dativejs)
+
 ### Installation
 ### Download
 ```html 
@@ -22,7 +24,7 @@
 ```
 ## EsModule
 ```js
-import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@v1.0.0/dist/dative.es.min.js";
+import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dative.es.min.js";
 ```
 <!--## Npm
 ```bash
