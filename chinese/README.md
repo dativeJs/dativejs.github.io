@@ -3,8 +3,9 @@
 # **DativeJs - 一个微型 JavaScript 用户界面框架**
 
 ![License](assets/img/License-MIT-yellow.svg)
+![Version](https://img.shields.io/github/v/release/dativeJs/dativejs)
+![repo size](https://img.shields.io/github/repo-size/dativeJs/dativejs)
 
-![Download](https://img.shields.io/github/downloads/dativeJs/dativejs/total?style=social)
 
 ### 安装
 ### 下载
