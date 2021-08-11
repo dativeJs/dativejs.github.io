@@ -4,7 +4,7 @@
 
 ![License](assets/img/License-MIT-yellow.svg)
 ![Version](https://img.shields.io/github/v/release/dativeJs/dativejs)
-![repo size](https://img.shields.io/github/repo-size/dativeJs/dativejs)
+![size](https://img.shields.io/github/size/dativeJs/dativejs/dist/dative.min.js.svg)
 
 
 ### 安装
