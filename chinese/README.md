@@ -5,7 +5,7 @@
 ![License](assets/img/License-MIT-yellow.svg)
 ![Version](https://img.shields.io/github/v/release/dativeJs/dativejs)
 ![size](https://img.shields.io/github/size/dativeJs/dativejs/dist/dative.min.js.svg)
-
+![Downloads](https://img.shields.io/jsdelivr/gh/hm/dativeJs/dativejs)
 
 ### 安装
 ### 下载
@@ -29,11 +29,11 @@ import Dative from "https://cdn.jsdelivr.net/gh/dativeJs/dativejs@main/dist/dati
 ```
 <!--## NPM
 ```bash
-  npm install dative
+  npm install dativejs
 ```
 ### 用法
 ```js
-import Dative from 'dative'；
+import Dative from 'dativejs'；
 ```-->
 ## 开始
 
