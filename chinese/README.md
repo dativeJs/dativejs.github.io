@@ -67,7 +67,7 @@ import Dative from 'dativejs'；
   </script>
   </body>
 ```
-<note :label="true">
+<note :label="true" type="warning">
    <h3>I'm not a chinese.<br />
       If You see any misspelled word you can help me to correct it by editing the page</h3>
 </note>
