@@ -152,7 +152,7 @@ new Docute({
         }
     },
     footer: `
-      <div style="border-top:1px solid var(--border-color);padding-top:30px;margin: 40px 0;color:#999999;font-size: .9rem;">
+      <div style="border-top:1px solid var(--border-color);padding-top:30px;margin: 40px 0;color:#999999;font-size: .9rem;" class="docute-footer">
       &copy; 2021-${new Date().getFullYear()} Developed by <a href="https://tobithedev.github.io" target="_blank">Tobithedev</a>. Released under MIT license.
       </div>
       `,
@@ -165,6 +165,9 @@ new Docute({
                   >GitHub<ExternalLinkIcon /></a
                 > to support DativeJs.</note
               >
+              <note type="tip">
+                <p>version <b>1.0.1</b> will be released soon</p>
+              </note>
             </div>
           `,
         components: {
