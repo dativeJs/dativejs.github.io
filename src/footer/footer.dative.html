@@ -1,0 +1,20 @@
+<div>
+  <footer
+    class="bg-gray-50 dark:bg-nav-800 relative z-1000 dark:text-slate-100 border-t border-nav-500 text-slate-800 py-7 px-2 mb-auto"
+  >
+    <div class="absolute left-3 top-4">
+      (c) 2021-{{year()}} MIT Licensed. Made By TexxaLabs Teams
+    </div>
+    <div class="absolute right-3 top-4">
+    <div class="flex space-x-3">
+      {{#each $store.social_icon as icons}}
+          <div>
+              <a href={{icons.link}}>
+                <i class="text-xl text-nav-200 fab fa-{{icons.name}}"></i>
+              </a>
+          </div>
+      {{/each}}
+    </div>
+    </div>
+  </footer>
+</div>

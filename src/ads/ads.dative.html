@@ -1,0 +1,17 @@
+{{#if $screen('md')}}
+<div class="p-[40px_0_0] mt-[51px] fixed z-[40] scrollbar transition-transform duration-[2s] top-[2px] bottom-0 right-0 ease-out bg-transparent dark:bg-transparent backdrop-filter backdrop-blur-[12px] bg-opacity-[1] h-[83%] overflow-y-auto list-type-none w-0  md:w-56">          
+<div class="pb-12">
+    <h1>Table Of Content</h1>
+    <ul>
+        {{#each hrefs as ids}}
+            {{#if ids === 'question' || ids === 'answer'}}
+                <li class="text-xl px-6"><a href="#{{ids}}">{{ids}}</a></li>
+            {{:else}}
+                <li class="text-xl mx-3"><a href={{'#'+ids}}>{{ids}}</a></li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
+</div>
+
+{{/if}}

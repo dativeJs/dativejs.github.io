@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Bahoo";
+  src: url("/public/fonts/BalooBhaijaan2-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-Medium";
+  src: url("/public/fonts/Raleway-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-VariableFont";
+  src: url("/public/fonts/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Fuzzy";
+  src: url("/public/fonts/FuzzyBubbles-Regular.ttf");
+}
+
+
+@font-face {
+  font-family: "Comforta-medium";
+  src: url("/public/fonts/Comfortaa-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Comforta-light";
+  src: url("/public/fonts/Comfortaa-Light.ttf");
+}
+
+@font-face {
+  font-family: "kiona";
+  src: url("/public/fonts/Kiona-Regular.ttf");
+}
+@font-face {
+  font-family: "source-code";
+  src: url("/public/fonts/Source_Code_Pro.ttf");
+}
+
+
+.font-bahoo{
+  font-family: "Bahoo";
+}
+
+.font-rale-way {
+  font-family: "Raleway-Medium"
+}
+
+.font-rale-way-italics {
+  font-family: "Raleway-VariableFont"
+}
+
+.font-fuzzy {
+  font-family: "Fuzzy";
+}
+
+.font-comforta-medium {
+  font-family: "Comforta-medium";
+}
+
+.font-comforta-light {
+  font-family: "Comforta-light";
+}
+
+.font-kiona {
+  font-family: "kiona";
+}
+
+.font-source-code {
+  font-family: "source-code"
+}

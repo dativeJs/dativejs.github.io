@@ -1,0 +1,529 @@
+/* html {
+  	--prism-foreground: inherit;
+    --prism-background: #fbfbfb;
+    --prism-class: #9807af;
+    --prism-builtin: #9807af;
+    --prism-function: #9807af;
+    --prism-keyword: #096d7c;
+    --prism-string: #679c0d;
+    --prism-number: #679c0d;
+    --prism-selector: #679c0d;
+    --prism-boolean: #679c0d;
+    --prism-property: #078ce5;
+    --prism-punctuation: #078ce5;
+    --prism-comment: #758575;
+    --prism-literal: #429988;
+    --prism-variable: inherit;
+    --prism-constant: #9807af;
+    --prism-deleted: #a14f55;
+    --prism-namespace: #9807af;
+    --prism-decorator: #9807af;
+    --prism-regex: #679c0d;
+    --prism-json-property: #078ce5;
+    --prism-line-number: #888888;
+    --prism-line-number-gutter: #eeeeee;
+    --prism-line-highlight-background: #444444;
+    --prism-selection-background: #444444;
+}
+ */
+
+html {
+  --prism-foreground: #eee;
+  --prism-background: #111;
+  --prism-class: #e879f9;
+  --prism-builtin: #e879f9;
+  --prism-function: #e879f9;
+  --prism-keyword: #22d3ee;
+  --prism-string: #bef264;
+  --prism-number: #bef264;
+  --prism-selector: #bef264;
+  --prism-boolean: #bef264;
+  --prism-property: #e0f2fe;
+  --prism-punctuation: #e0f2fe;
+  --prism-comment: #a0ada0;
+  --prism-literal: #2f8a89;
+  --prism-constant: #e879f9;
+  --prism-namespace: #e879f9;
+  --prism-decorator: #e879f9;
+  --prism-regex: #bef264;
+  --prism-json-property: #22d3ee;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--prism-foreground);
+  background: none;
+  font-family: "source-code";
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  /* border-radius: 0.3em; */
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--prism-background);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  /* border-radius: 0.3em; */
+  white-space: normal;
+}
+
+.token.tag,
+.token.class-name,
+.token.selector,
+.token.selector .class,
+.token.selector.class,
+.token.function {
+  color: rgb(244 114 182 / var(--tw-text-opacity));
+}
+
+.token.keyword {
+  color: rgb(8 145 178 / var(--tw-text-opacity));
+}
+
+.token.attr-name,
+.token.rule,
+.token.pseudo-class,
+.token.important {
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
+.token.attr-value,
+.token.class,
+.token.string {
+  color: rgb(125 211 252 / var(--tw-text-opacity));
+}
+
+.token.punctuation,
+.token.attr-equals {
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.token.attr-value * {
+  color: rgb(125 211 252 / var(--tw-text-opacity));
+}
+
+.token.attr-value .attr-equals,
+.token.attr-value .attr-equals + .punctuation,
+.token.attr-value > .punctuation:last-child {
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.token.property {
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.token.unit {
+  color: rgb(153 246 228 / var(--tw-text-opacity));
+}
+
+.language-shell .token.function {
+  color: rgb(244 114 182 / var(--tw-text-opacity));
+}
+
+.language-css .token.function {
+  color: rgb(153 246 228 / var(--tw-text-opacity));
+}
+.token.module {
+  color: rgb(91 33 182 / var(--tw-text-opacity));
+}
+
+.token.class-name {
+  color: rgb(7 89 133 / var(--tw-text-opacity));
+}
+
+.token.comment,
+.token.operator,
+.token.combinator {
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.token.unchanged {
+  display: block;
+}
+
+.token.deleted,
+.token.inserted {
+  display: block;
+  position: relative;
+  margin-left: -2.25rem;
+  margin-right: -2.25rem;
+  padding-left: 2rem;
+  padding-right: 1.25rem;
+  border-left-width: 4px;
+}
+
+.token.deleted,
+.token.inserted::before {
+  position: absolute;
+  top: 0px;
+  left: 1rem;
+}
+
+.token.inserted {
+  background-color: rgb(45 212 191 / 0.15);
+  border-color: rgb(45 212 191 / var(--tw-border-opacity));
+}
+
+.token.inserted::before {
+  --tw-content: "+";
+  content: var(--tw-content);
+  color: rgb(45 212 191 / var(--tw-text-opacity));
+}
+
+.token.deleted {
+  background-color: rgb(244 63 94 / 0.15);
+  border-color: rgb(251 113 133 / var(--tw-border-opacity));
+}
+
+.token.deleted::before {
+  --tw-content: "-";
+  content: var(--tw-content);
+  --tw-text-opacity: 1;
+  color: rgb(251 113 133 / var(--tw-text-opacity));
+}
+
+pre[class^="language-diff-"] {
+  display: flex;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+pre[class^="language-diff-"] > code {
+  flex: none;
+  min-width: 100%;
+}
+
+div.code-toolbar {
+  position: relative;
+}
+
+div.code-toolbar > .toolbar {
+  position: absolute;
+  z-index: 10;
+  top: 0.3em;
+  right: 0.2em;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+div.code-toolbar:hover > .toolbar {
+  opacity: 1;
+}
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
+  opacity: 1;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item {
+  display: inline-block;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a {
+  cursor: pointer;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+  color: #99aeb4;
+  font-size: 0.6em;
+  padding: 0 0.5em;
+  padding-top: 2px;
+  background: transparent;
+}
+
+div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar > .toolbar-item > span:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/**
+
+
+/* .token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--prism-comment);
+}
+
+.token.function {
+    color: var(--prism-function);
+}
+
+.token.punctuation {
+	color: var(--prism-punctuation);
+}
+
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--prism-deleted);
+}
+
+.token.property {
+	color: var(--prism-property);
+}
+
+.token.boolean {
+  color: var(--prism-boolean)
+}
+.token.number {
+	color: var(--prism-number);
+}
+
+.token.attr-name {
+	color: var(--prism-punctuation);
+}
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--prism-builtin);
+}
+
+.token.string {
+	color: var(--prism-string)
+}
+
+.token.selector {
+  color: var(--prism-selector)
+}
+.token.class-name {
+	color: var(--prism-class)
+}
+.token.tag {
+	color: var(--prism-namespace)
+}
+
+.token.operator {
+	color: #eeeeee;
+}
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: var(--prism-constant);
+}
+
+
+.token.atrule,
+.token.attr-value{
+  	color: var(--prism-string);
+}
+
+.token.keyword {
+	color: var(--prism-keyword);
+}
+
+.token.regex,
+.token.important {
+	color: var(--prism-regex);
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+@media screen and (-ms-high-contrast: active) {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		color: windowText;
+		background: window;
+	}
+
+	:not(pre) > code[class*="language-"],
+	pre[class*="language-"] {
+		background: window;
+	}
+
+	.token.important {
+		background: highlight;
+		color: window;
+		font-weight: normal;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.selector {
+		font-weight: bold;
+	}
+
+	.token.attr-value,
+	.token.doctype,
+	.token.operator {
+    color: var(--prism-literal)
+  }
+
+	.token.keyword {
+    color: var(--prism-keyword)
+  }
+	
+  
+  .token.property {
+    color: var(--prism-property)
+  }
+	.token.function {
+    color: var(--prism-function);
+
+  }
+
+  .token.string {
+    color: var(--prism-string)
+  }
+	.token.comment {
+    color: var(--prism-comment)
+  }
+
+	.token.attr-value,
+	.token.url {
+		font-weight: normal;
+	}
+} */
+
+/**
+
+
+.token.tag,
+.token.class-name,
+.token.selector,
+.token.selector .class,
+.token.selector.class,
+.token.function {
+  @apply text-pink-400;
+}
+
+.token.attr-name,
+.token.keyword,
+.token.rule,
+.token.pseudo-class,
+.token.important {
+  @apply text-slate-300;
+}
+
+.token.attr-value,
+.token.class,
+.token.string {
+  @apply text-sky-300;
+}
+
+.token.punctuation,
+.token.attr-equals {
+  @apply text-slate-500;
+}
+
+.token.attr-value * {
+  @apply text-sky-300;
+}
+
+.token.attr-value .attr-equals,
+.token.attr-value .attr-equals + .punctuation,
+.token.attr-value > .punctuation:last-child {
+  @apply text-slate-500;
+}
+
+.token.property {
+  @apply text-sky-300;
+}
+
+.token.unit {
+  @apply text-teal-200;
+}
+
+.language-shell .token:not(.comment),
+.token.atapply .token:not(.rule):not(.important):not(.punctuation) {
+  color: inherit;
+}
+
+.language-css .token.function {
+  @apply text-teal-200;
+}
+
+.token.comment,
+.token.module,
+.token.operator,
+.token.combinator {
+  @apply text-slate-400;
+}
+
+.token.unchanged {
+  @apply block;
+}
+
+.token.deleted,
+.token.inserted {
+  @apply block relative -mx-9 pl-8 pr-5 border-l-4 before:absolute before:top-0 before:left-4;
+}
+
+.token.inserted {
+  @apply bg-teal-400/[0.15] border-teal-400 before:content-['+'] before:text-teal-400;
+}
+
+.token.deleted {
+  @apply bg-rose-500/[0.15] border-rose-400 before:content-['-'] before:text-rose-400;
+}
+
+pre[class^='language-diff-'] {
+  @apply flex px-9;
+}
+
+pre[class^='language-diff-'] > code {
+  @apply flex-none min-w-full;
+}
+**/

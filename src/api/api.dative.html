@@ -1,0 +1,711 @@
+<div>
+  <div id="navbar"></div>
+  <div id="sidebar"></div>
+  <div id="ads"></div>
+  <div class="responsive-main">
+    <div class="pt-[60px] pb-5">
+      <h1 class="px-4 text-2xl font-bold">Api</h1>
+      <br />
+      <div class="px-4 text-xl">
+        <h1 class="text-xl" id="global-config">Global Config</h1>
+        <hr />
+        <br />
+        <p>
+          <codespan>Dative.config</codespan> is an object containing Dative's
+          global configurations You can modify its properties listed below
+          before bootstraping your application
+        </p>
+        <br />
+        <br />
+        <b>slient</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">boolean</codespan></li>
+          <br />
+          <li>Default: <codespan class="text-lg">false</codespan></li>
+          <br />
+          <li>Usage:</li>
+          <br />
+          <pre
+            class="lang-javascript"
+          ><code>Dative.config.slient = true</code></pre>
+          <p>Suppress all Dative Logs and warnings</p>
+        </div>
+        <br />
+        <h1 class="text-xl" id="global-api">Global API</h1>
+        <hr />
+        <br />
+        <div class="px-4">
+          <li>Arguments:</li>
+          <p class="mx-3">
+            <li><codespan>{Object} options</codespan></li>
+          </p>
+          <li>Usage:</li>
+          <br />
+          <p>
+            Create a "subclass" of the base Dative constructor. The argument
+            should be an object containing component options
+          </p>
+          <br />
+          <p>
+            The special case to note here is the
+            <codespan>data</codespan> options - it must be a function when used
+            with <codespan>Dative.extend</codespan><br />
+          </p>
+          <br />
+          <pre
+            class="lang-html"
+          ><code>&lt;div id="base-mount">&lt;/div></code></pre>
+          <pre class="lang-javascript"><code>var Account = Dative.extend({
+    template: '&lt;p>{\{username}} Your NetWorth is {\{networth}}&lt;/p>'
+    data(){
+        return {
+            username: 'Emeka Tobi',
+            networth: '100M'
+        }
+    } 
+})
+
+new Account({ el: '#base-mount' })</code></pre>
+          <br />
+          <p class="text-2xl" id="props">Passing of props</p>
+          <br />
+          <pre
+            class="lang-html"
+          ><code>&lt;div id="base-mount">&lt;/div></code></pre>
+          <pre class="lang-javascript"><code>var Account = Dative.extend({
+    template: '&lt;p>{\{username}} Your NetWorth is {\{networth}}&lt;/p>',
+    props: {
+        username: String,
+        networth: String
+    }
+})
+
+new Account({ 
+    el: '#base-mount', 
+    props: { 
+        username: 'Emeka Tobi',
+        networth: '100M'
+     } 
+})</code></pre>
+          <br />
+          <h1 class="text-xl" id="props-with-type">Props with type</h1>
+          <br />
+          <pre
+            class="lang-html"
+          ><code>&lt;div id="base-mount">&lt;/div></code></pre>
+          <pre class="lang-javascript"><code>var Account = Dative.extend({
+    template: '&lt;p>{\{username}} Your NetWorth is {\{networth}}&lt;/p>',
+    props: {
+        username: { 
+          type: String
+        },
+        networth: { 
+          type: String
+        }
+    }
+})
+
+new Account({ 
+    el: '#base-mount', 
+    props: { 
+        username: 'Emeka Tobi',
+        networth: '100M'
+     } 
+})</code></pre>
+          <br />
+          <br />
+          <h1 class="text-xl" id="version">Dative.version</h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>
+              Details: Provides the installed version of Dative as a string
+            </li>
+          </div>
+        </div>
+        <br />
+        <h1 class="text-xl">Application api</h1>
+        <hr />
+        <br />
+        <div class="px-4">
+          <h1 class="text-xl" id="render">;</h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>Details: Used to render the application</li>
+            <li>Returns: The element that the application is mounted to</li>
+            <p>It is used to render the component to mount element</p>
+          </div>
+          <br />
+          <h1 class="text-xl" id="destroy">app.$destroy()</h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>Details: Used to destroy the application</li>
+            <p>
+              Triggers the <codespan>ondestroy</codespan> function <br />
+              It disconnects the application from the element .<br />
+            </p>
+            <li>Usage:</li>
+            <br />
+            <pre class="language-javascript"><code>var app = new Dative({
+  el: '#app',
+  template: '&lt;div>Hello!&lt;/div>',
+  ondestroy(){
+    console.log('Destroy')
+  }
+})
+app.$destroy()</code></pre>
+          </div>
+          <br />
+          <h1 class="text-xl" id="use">app.use()</h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>Details: Used to install dative plugin to the application</li>
+            <p>
+              For Plugins that needs to access the template<br />
+              You need to use the mount function instead of the
+              <codespan>el</codespan> options<br />
+              Or Else You'll Get An Error
+            </p>
+            <li>Usage:</li>
+            <br />
+            <pre
+              class="language-javascript"
+            ><code>var richPlugin = function({ instance }){
+    instance.title = 'Dative v2-alpha has been released'
+    instance.author = 'Emeka (Tobithealpha)'
+}
+var app = new Dative({
+  el: '#app',
+  template: `
+    &lt;div>
+      &lt;p>{\{title}}&lt;/p>
+      &lt;p>By -- {\{author}}&lt;/p>
+    &lt;/div>
+  `,
+})
+app.use(richPlugin)
+</code></pre>
+          </div>
+          <br />
+          <h1 class="text-xl" id="set">app.set(obj)</h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>
+              Details: Used to set an existing property in the application
+            </li>
+            <p>
+              <b>{{"Note".toUpperCase()}}</b>: If the Property you are setting
+              does not exists you might get an error or the property will not be
+              reactive
+            </p>
+            <li>Usage:</li>
+            <br />
+            <pre class="language-javascript"><code>var app = new Dative({
+    data: {
+      msg: 'Hola!'
+    },
+    oncreated() {
+      console.log(this.msg)// =>  Hola!
+    }
+})
+
+app.set({
+  msg: 'Salut'
+})
+console.log(app.msg) // => Salut
+
+
+// Or with Non-Object Style 
+app.set('msg', 'Salut')
+console.log(app.msg) // => Salut</code></pre>
+          </div>
+          <br />
+          <h1 class="text-xl" id="get">app.get(value?: string)</h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>
+              Details: Used to get an existing property in the application
+            </li>
+            <p>
+              <b>{{"Note".toUpperCase()}}</b>: If the Property you are getting
+              does not exists you might get an error
+            </p>
+            <li>Usage:</li>
+            <br />
+            <pre class="language-javascript"><code>var app = new Dative({
+    data: {
+      api: {
+        id: 'xasc-ewdxwqed-xdwqa'
+      },
+      msg: 'Hola!'
+    },
+    oncreated() {
+      console.log(this.get('msg'))// =>  Hola!
+      console.log(this.get('api.id'))// =>  xasc-ewdxwqed-xdwqa
+      // Leaving the params with no parameter will return the whole instance
+      console.log(this.get())// =>  Dative { }
+    }
+})
+
+console.log(app.get('msg')) // => Hola!
+console.log(app.get('api.id'))// =>  xasc-ewdxwqed-xdwqa</code></pre>
+          </div>
+          <br />
+          <h1 class="text-xl" id="attach">
+            app.attach(component: Function|Array&lt;Function>)
+          </h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>Details: Used to attach a component to the application</li>
+            <p class="text-xl">
+              See
+              <a href="/guide#extend" class="text-emerald-500">Dative.extend</a>
+            </p>
+            <p>
+              In Dative creating multiple instances the main and sub-instance
+              works well but when using the sub-instance in the main
+              instance.<br />
+              When the Main Instance Re-renders the sub-instance will be cleared
+              so we introduce the attach methods to help
+            </p>
+            <li>Usage:</li>
+            <br />
+            <pre class="language-javascript"><code>var Wallet = Dative.extend({
+  template: `
+  &lt;div>
+    &lt;h1>Hola {\{username}}&lt;/h1>
+    &lt;h1>Your Wallet Balance is {\{balance}}&lt;/h1>
+  &lt;div>
+  `,
+  props: {
+    username: {
+      type: String
+    },
+    balance: {
+      type: Number
+    }
+  }  
+})
+
+var app = new Dative({
+  el: '#app'
+  template: `
+  &lt;div>
+    &lt;h1>Hello World&lt;/h1>
+  &lt;div id="sub">&lt;/div>
+  &lt;/div>`
+})
+
+
+var wallet = new Wallet({
+  el: '#sub',
+  props: {
+    username: 'Emeka (Tobithealpha)',
+    balance: '29032'
+  }
+})
+
+app.attach(wallet)
+// Or
+app.attach([wallet])
+</code></pre>
+          </div>
+          <br />
+          <h1 class="text-xl" id="detach">
+            app.detach(component: Function|Array&lt;Function>)
+          </h1>
+          <hr />
+          <br />
+          <div class="px-4">
+            <li>
+              Details: Used to detach (unlink/remove) a component to the
+              application
+            </li>
+            <p>
+              It's used to remove a sub instance thats already attached to the
+              component
+            </p>
+            <li>Usage:</li>
+            <br />
+            <pre class="language-javascript"><code>var Wallet = Dative.extend({
+  template: `
+  &lt;div>
+    &lt;h1>Hola {\{username}}&lt;/h1>
+    &lt;h1>Your Wallet Balance is {\{balance}}&lt;/h1>
+  &lt;div>
+  `,
+  props: {
+    username: {
+      type: String
+    },
+    balance: {
+      type: Number
+    }
+  }  
+})
+
+var app = new Dative({
+  el: '#app'
+  template: `
+  &lt;div>
+    &lt;h1>Hello World&lt;/h1>
+  &lt;div id="sub">&lt;/div>
+  &lt;/div>`
+})
+
+
+var wallet = new Wallet({
+  el: '#sub',
+  props: {
+    username: 'Emeka (Tobithealpha)',
+    balance: '29032'
+  }
+})
+
+
+app.detach(wallet)
+// Or
+app.detach([wallet])
+</code></pre>
+          </div>
+          <br />
+        </div>
+      </div>
+      <div>
+        <h1 class="text-xl" id="options-api">Options API</h1>
+        <br />
+        <hr />
+        <br />
+        <b>el</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">string | Element</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            Provide the Dative instance an existing DOM element to mount on.
+            <br />
+            It can be a class, id selector or an actual Element.
+            <br />
+            After the instance is mounted, the resolved element will be
+            accessible via <codespan>app.$el</codespan>. <br />
+          </p>
+          <br />
+        </div>
+        <br />
+        <b>sanitize</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">boolean</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            When the sanitize options is true, all the html inside the data
+            property will be sanitized
+            <br />
+            That means
+            <br />
+            If you have a property in data like this
+          </p>
+          <pre class="lang-ts"><code>{
+  data() {
+    return {
+      content: '&lt;h1>Hello&lt;/h1>'
+    }
+  },
+  sanitize: true,
+  onmounted() {
+    console.log(this.content) // => &\#38;lt&\#59;h1&\#62;Hello&\#38;lt&\#59;&\#47;h1&\#62;
+  }
+}</code></pre>
+          <br />
+        </div>
+        <br />
+        <b>template</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">string</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            A string template to be used as the markup for the dativejs
+            instance. <br />
+            The template will <b>replaced</b> the mounted element. <br />
+            Any existing markup inside the mounted element be ignored.
+          </p>
+          <br />
+          <p>
+            If the string starts with <codespan>#</codespan> it will be used as
+            a querySelector and use the selected element's innerHTML as the
+            template string. <br />
+            This allows the use of the common
+            <codespan>&lt;script type="text/dative"></codespan> trick to include
+            templates
+          </p>
+          <br />
+          <blockquote>
+            <p>
+              From a security perspective, you should only use Dative templates
+              that You can trust. Never use user-generated content as your
+              template
+            </p>
+          </blockquote>
+        </div>
+        <br />
+        <b>computed</b>
+        <div class="px-4">
+          <li>
+            Type:
+            <codespan class="text-lg"
+              >{ [x: string]: Function | { get: Function, set: Function }
+              }</codespan
+            >
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            Computed properties to be mixed into the Dative instance. <br />
+            Computed properties are cached, and only re-computed on reactive
+            dependency changes. Note that if a certain dependency is out of the
+            instance's scope (not reactive), the computed property will not be
+            updated
+          </p>
+        </div>
+        <br />
+        <b>methods</b>
+        <div class="px-4">
+          <li>
+            Type: <codespan class="text-lg">{ [x: string]: Function }</codespan>
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            Methods to be mixed into the Dative instance. You Can access these
+            methods directly on the instance, or use them in the directives
+            expressions. All methods will have their
+            <codespan>this</codespan> context automagically bound to the Dative
+            Instance.
+          </p>
+          <br />
+          <blockquote>
+            <p>
+              Note that
+              <b>you should not use arrow function to define a methods</b> (e.g.
+              <codespan>inc: ()=> this.count++</codespan>). The reason is arrow
+              functions bind the parent context, so
+              <codespan>this</codespan> will not be the Dative instance as you
+              expect and <codespan>this.count</codespan> will be undefined
+            </p>
+          </blockquote>
+          <br />
+          <blockquote>
+            <p>
+              <b>Note</b>: Also, Never try doing this
+              <codespan>&lt;button on:click="{\{inc()}}">&lt;/button></codespan
+              >. Reason Why Is Because it will do infinite calls to the function
+              without even clicking the button
+            </p>
+          </blockquote>
+        </div>
+        <br />
+        <!-- </div>
+      <br /> -->
+        <b>attach</b>
+        <div class="px-4">
+          <li>
+            Type:
+            <codespan class="text-lg"
+              >Dative | DativeComponent | Array&lt;DativeComponent |
+              Dative></codespan
+            >
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            It is used to attach dative Component to an instance <br />
+            See
+            <a href="/guide#attach" class="text-nav-500">Attach Methods</a> For
+            More Explanation
+          </p>
+          <br />
+          <pre class="lang-ts"><code>var Wallet = Dative.extend({
+  template: `
+  &lt;div>
+    &lt;h1>Hola {\{username}}&lt;/h1>
+    &lt;h1>Your Wallet Balance is {\{balance}}&lt;/h1>
+  &lt;div>
+  `,
+  props: {
+    username: {
+      type: String
+    },
+    balance: {
+      type: Number
+    }
+  }  
+})
+
+var app = new Dative({
+  el: '#app'
+  template: `
+  &lt;div>
+    &lt;h1>Hello World&lt;/h1>
+  &lt;div id="sub">&lt;/div>
+  &lt;/div>`
+})
+
+
+var wallet = new Wallet({
+  el: '#sub',
+  attach: app,
+  props: {
+    username: 'Emeka (Tobithealpha)',
+    balance: '29032'
+  }
+})</code></pre>
+        </div>
+        <br />
+        <b>animate</b>
+        <div class="px-4">
+          <li>
+            Type:
+            <codespan class="text-lg">{ [x: string]: DativeAnimate }</codespan>
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            It is used to create custom animations in the current instance
+            <br />
+            See
+            <a href="/guide#animation" class="text-nav-500">Animation</a> For
+            More Explanation
+          </p>
+        </div>
+        <br />
+        <b>use</b>
+        <div class="px-4">
+          <li>
+            Type: <codespan class="text-lg">Array&lt;DativePlugin></codespan>
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            It is used to install plugins into the dative instance <br />
+            See <a href="/guide#plugin" class="text-nav-500">Plugins</a> For
+            More Explanation
+          </p>
+        </div>
+        <br />
+        <b>property</b>
+        <div class="px-4">
+          <li>
+            Type:
+            <codespan class="text-lg">{ [x: string]: DativeProperty }</codespan>
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <p>
+            It is used to create custom property <br />
+            See <a href="/guide#property" class="text-nav-500">Property</a> For
+            More Explanation
+          </p>
+        </div>
+        <br />
+        <b>props</b>
+        <div class="px-4">
+          <li>
+            Type:
+            <codespan class="text-lg"
+              >{ [x: string]: DativeComponentProps } |
+              DativeComponentProps</codespan
+            >
+          </li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <br />
+          <blockquote>
+            {{"NOTE".bold()}}: The props options Works Only in the Dative.extend
+          </blockquote>
+          <br />
+          <p>
+            It is used to create props for a dative extended instance <br />
+            See
+            <a href="/guide#extend" class="text-nav-500">Dative.extend</a> For
+            More Explanation
+          </p>
+        </div>
+        <br />
+        <b>css</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">string</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <br />
+          <blockquote>
+            {{"NOTE".bold()}}: The props options Works Only in the Dative.extend
+          </blockquote>
+          <br />
+          <p>
+            It is used to create styles in a dative extended instance<br />
+            See
+            <a href="/guide#extend" class="text-nav-500">Dative.extend</a> For
+            More Explanation
+          </p>
+        </div>
+        <br />
+        <b>onmounted</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">onmounted(): void</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <br />
+          <blockquote>
+            {{"NOTE".bold()}}: The <codespan>mounted</codespan> was renamed to
+            <codespan>onmounted</codespan> in Dative 2-alpha
+          </blockquote>
+          <br />
+          <p>It is invoked when the application has been mounted</p>
+        </div>
+        <br />
+        <b>oncreated</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">oncreated(): void</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <br />
+          <blockquote>
+            {{"NOTE".bold()}}: The <codespan>created</codespan> was renamed to
+            <codespan>oncreated</codespan> in Dative 2-alpha
+          </blockquote>
+          <br />
+          <p>It is invoked when the application is created</p>
+        </div>
+        <br />
+        <b>ondestroy</b>
+        <div class="px-4">
+          <li>Type: <codespan class="text-lg">ondestroy(): void</codespan></li>
+          <br />
+          <li class="pb-5">Details:</li>
+          <br />
+          <blockquote>
+            The <codespan>ondestroy</codespan> is a new options in Dative
+            2-alpha <br />
+            See <a href="#destroy" class="text-nav-500">$destroy</a> For More
+            Explanation
+          </blockquote>
+          <br />
+          <p>It is invoked when the application has been destroyed</p>
+        </div>
+        <br />
+      </div>
+      <br />
+      <p class="text-xl text-white">
+        Last Modified: {{transformer(Date.now())}}
+      </p>
+    </div>
+  </div>
+  <div id="footer" class="relative"></div>
+</div>

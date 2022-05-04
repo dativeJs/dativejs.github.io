@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  *::-webkit-scrollbar {
+    @apply h-[8px] w-[8px];
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-nav-600/40;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-[100vh] border-[1px] border-[#f6f7ed] bg-nav-600;
+  }
+  @font-face {
+    font-family: "poppins-medium";
+    src: url("/public/fonts/Poppins-Medium.ttf");
+  }
+  @font-face {
+    font-family: "poppins-semibold";
+    src: url("/public/fonts/Poppins-SemiBold.ttf");
+  }
+  @font-face {
+    font-family: "poppins-regular";
+    src: url("/public/fonts/Poppins-Regular.ttf");
+  }
+  @font-face {
+    font-family: "poppins-light";
+    src: url("/public/fonts/Poppins-Light.ttf");
+  }
+  .scrollbar::-webkit-scrollbar {
+    @apply h-[8px] w-[8px];
+  }
+  /* rounded-[100vh] */
+  .scrollbar::-webkit-scrollbar-track {
+    @apply dark:bg-transparent;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-[100vh] border-[1px] border-[#f6f7ed] bg-nav-500;
+  }
+  /* .scrollbar::-web */
+  pre::-webkit-scrollbar {
+    @apply h-[8px] w-[8px];
+  }
+  /* rounded-[100vh] */
+  pre::-webkit-scrollbar-track {
+    @apply dark:bg-transparent;
+  }
+  pre::-webkit-scrollbar-thumb {
+    @apply rounded-[100vh] border-[1px] border-[#f6f7ed] bg-nav-400;
+  }
+}
+
+@layer components {
+  .responsive-main {
+    @apply mx-3 md:mx-60;
+  }
+
+  .codespan {
+    @apply mx-2 rounded bg-nav-400 px-1 py-1 text-nav-50;
+  }
+
+  codespan {
+    @apply codespan;
+  }
+
+  blockquote {
+    @apply rounded-lg bg-gray-50 bg-opacity-[1] px-4 py-4 pt-2 backdrop-blur-[12px] backdrop-filter dark:bg-nav-600 dark:text-nav-200;
+  }
+
+  pre {
+    @apply !rounded-xl !text-base;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fade {
+    @apply translate-y-0 text-gray-800 opacity-[1] dark:text-zinc-50 dark:md:bg-gradient-to-r dark:md:from-indigo-700 dark:md:to-orange-500 dark:md:bg-clip-text dark:md:text-transparent lg:z-10 lg:border-gray-500;
+  }
+
+  .warning {
+    @apply bg-yellow-300 text-slate-900 dark:text-slate-50;
+  }
+
+  .success {
+    @apply bg-green-300 text-slate-900 dark:text-slate-50;
+  }
+
+  .error {
+    @apply bg-red-500 text-slate-900 dark:text-slate-50;
+  }
+  .header {
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+    border-style: none;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    height: var(--header-height);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+  }
+}
+
+/* @layer base {
+} */

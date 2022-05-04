@@ -1,0 +1,46 @@
+<div>
+  <div id="navbar"></div>
+  <div id="sidebar"></div>
+  <div class="responsive-main">
+    <div class="pt-[54px] pb-6">
+      <h1 class="px-4 text-center text-5xl font-bold">Core Teams</h1>
+      <br /><br />
+      <div class="!md:grid md:grid-cols-2 md:gap-x-2">
+        {{#each $store.teams as i,team}} {{$: duration = 2000*(Number(i)+3);}}
+        <div class="mx-8 my-3 space-y-8 pb-8" @fadein="{{duration}}, 30">
+          <div
+            class="neon mx-auto max-w-sm space-y-2 rounded-xl bg-nav-800 py-8 px-8 sm:items-center sm:overflow-hidden sm:py-0 sm:px-0 md:flex md:space-y-0 md:space-x-6 md:px-8"
+          >
+            <img
+              class="mx-auto block h-24 w-24 rounded-full object-cover sm:h-52 sm:w-full sm:rounded-none md:relative md:right-8 md:h-24 md:w-24 md:flex-shrink-0 md:rounded-full"
+              src="{{team.image}}"
+            />
+            <div class="space-y-2 text-center sm:pb-6 md:pb-0 md:text-left">
+              <div class="space-y-0.5">
+                <a href="{{team.link}}"
+                  ><h1 class="text-lg font-semibold text-black dark:text-white">
+                    {{team.name}}
+                  </h1></a
+                >
+                <p class="font-medium text-gray-500">{{team.base}}</p>
+                <br />
+                <div class="space-x-2 text-2xl">
+                  {{#each team.social_media as social}}
+                  <a href="{{social.link}}"
+                    ><i
+                      class="fab fa-{{social.name.toLowerCase()}} {{#if social.name.toLowerCase() === 'facebook'}}text-blue-600{{/if}}"
+                    ></i
+                  ></a>
+                  {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  <div id="footer" class="relative top-24 pt-5 sm:top-[290px]"></div>
+</div>
