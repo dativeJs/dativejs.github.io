@@ -22,4 +22,4 @@ This is the repository for dativejs v2-alpha website
 
 ## Thanks For Visiting 
 
-##### Don't Forget to leaeve a star 🌟 🥰
+##### Don't Forget to leave a star 🌟 🥰
